@@ -1,0 +1,38 @@
+{
+  "name": "unilog",
+  "version": "0.1.0",
+  "description": "A universal logger to support TroJS development and Vortex applications",
+  "keywords": [
+    "log"
+  ],
+  "homepage": "https://github.com/devhaole/unilog#readme",
+  "bugs": {
+    "url": "https://github.com/devhaole/unilog/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devhaole/unilog.git"
+  },
+  "license": "MIT",
+  "author": "Hao Le",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/postInstall"
+  },
+  "devDependencies": {
+    "@types/luxon": "^1.27.0",
+    "@types/node": "^16.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-define-config": "^1.0.8",
+    "eslint-plugin-node": "^11.1.0",
+    "typescript": "^4.3.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "luxon": "^1.27.0"
+  }
+}
