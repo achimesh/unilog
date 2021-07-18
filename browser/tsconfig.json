@@ -1,0 +1,18 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "lib": [
+            "ES2020",
+            "DOM"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@unilog/runtime/*": ["../runtime/src/*"]
+        },
+        // we dont need NodeJS typings here
+        "types": []
+    },
+    "include": [
+        "src"
+    ]
+}

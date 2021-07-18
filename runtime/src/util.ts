@@ -1,3 +1,5 @@
+import { LogType, UNILOG_PLUGIN_NAMESPACE } from "./consts";
+
 export function isNullOrUndefined<T>(value: T): boolean {
     return typeof value == 'undefined' || value == null;
 }
@@ -16,4 +18,17 @@ export function hashCode(value: string): number {
     }
 
     return hash;
+}
+
+export function getLogTypes(): string[] {
+    return [
+        LogType.Info,
+        LogType.Warning,
+        LogType.Error,
+        LogType.Debug
+    ];
+}
+
+export function createPluginName(name: string): string {
+    return UNILOG_PLUGIN_NAMESPACE + "." + name;
 }

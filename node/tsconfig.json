@@ -1,0 +1,15 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "lib": [
+            "ES2020"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@unilog/runtime/*": ["../runtime/src/*"]
+        }
+    },
+    "include": [
+        "src"
+    ]
+}

@@ -1,4 +1,4 @@
-import { LogType } from "../shared";
+import { LogType } from "../consts";
 import { isNullOrUndefined } from "../util";
 import { getLog, Log, LogIdentifier, setLog } from "./log";
 import { getNamespace, Namespace, NamespaceIdentifier, setNamespace } from "./namespace";
@@ -14,7 +14,7 @@ interface ExposedLog extends Omit<Log, "namespaceIds"> {
 export interface LogContextInput {
     content: unknown[];
     namespaces: string[];
-    type: LogType
+    type: LogType;
 }
 
 export function createLogContext(input: LogContextInput): LogContext {

@@ -1,13 +1,12 @@
-import { DateTime } from 'luxon';
-import { LogType, allowedLogTypes } from '../shared';
-import { isNullOrUndefined } from '../util';
+import { LogType } from '../consts';
+import { getLogTypes, isNullOrUndefined } from '../util';
 import { NamespaceIdentifier } from './namespace';
 
 export type LogIdentifier = number;
 
 export interface Log extends LogInput {
     id: LogIdentifier;
-    timestamp: DateTime;
+    timestamp: number;
 }
 
 export interface LogInput {
@@ -18,6 +17,7 @@ export interface LogInput {
 
 let nextLogId = 1;
 const record: Record<LogIdentifier, Log> = {};
+const logTypes = getLogTypes();
 
 export function setLog(input: LogInput): LogIdentifier {
     validateInput(input);
@@ -30,7 +30,7 @@ export function setLog(input: LogInput): LogIdentifier {
         content: input.content,
         namespaceIds: input.namespaceIds,
         type: input.type,
-        timestamp: DateTime.utc()
+        timestamp: new Date().getTime()
     }
 
     return id;
@@ -69,7 +69,7 @@ function validateInput(input: LogInput): void {
         throw new Error('Log type cannot be null or undefined');
     }
 
-    if (allowedLogTypes.some(t => t == input.type) == false) {
+    if (logTypes.some(type => type == input.type) == false) {
         throw new Error('Log type is invalid');
     }
 }

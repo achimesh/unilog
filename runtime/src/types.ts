@@ -1,5 +1,3 @@
-import { LogBuilder } from "./core";
-
 /**
  * Standard logger. 
  */
